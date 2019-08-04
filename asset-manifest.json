@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "​https://chenmordechai.github.io/react-proj/static/css/main.88c35fa2.chunk.css",
-    "main.js": "​https://chenmordechai.github.io/react-proj/static/js/main.668d0de1.chunk.js",
-    "main.js.map": "​https://chenmordechai.github.io/react-proj/static/js/main.668d0de1.chunk.js.map",
-    "runtime~main.js": "​https://chenmordechai.github.io/react-proj/static/js/runtime~main.21d92917.js",
-    "runtime~main.js.map": "​https://chenmordechai.github.io/react-proj/static/js/runtime~main.21d92917.js.map",
-    "static/js/2.aea32ea8.chunk.js": "​https://chenmordechai.github.io/react-proj/static/js/2.aea32ea8.chunk.js",
-    "static/js/2.aea32ea8.chunk.js.map": "​https://chenmordechai.github.io/react-proj/static/js/2.aea32ea8.chunk.js.map",
-    "index.html": "​https://chenmordechai.github.io/react-proj/index.html",
-    "precache-manifest.1fe7a15a6f8469a3ab5294da4e53ee84.js": "​https://chenmordechai.github.io/react-proj/precache-manifest.1fe7a15a6f8469a3ab5294da4e53ee84.js",
-    "service-worker.js": "​https://chenmordechai.github.io/react-proj/service-worker.js",
-    "static/css/main.88c35fa2.chunk.css.map": "​https://chenmordechai.github.io/react-proj/static/css/main.88c35fa2.chunk.css.map"
+    "main.css": "/react-proj/static/css/main.88c35fa2.chunk.css",
+    "main.js": "/react-proj/static/js/main.53ecc44b.chunk.js",
+    "main.js.map": "/react-proj/static/js/main.53ecc44b.chunk.js.map",
+    "runtime~main.js": "/react-proj/static/js/runtime~main.e0e1b08e.js",
+    "runtime~main.js.map": "/react-proj/static/js/runtime~main.e0e1b08e.js.map",
+    "static/js/2.aea32ea8.chunk.js": "/react-proj/static/js/2.aea32ea8.chunk.js",
+    "static/js/2.aea32ea8.chunk.js.map": "/react-proj/static/js/2.aea32ea8.chunk.js.map",
+    "index.html": "/react-proj/index.html",
+    "precache-manifest.d55c7d666cbc7278902112c6177811c5.js": "/react-proj/precache-manifest.d55c7d666cbc7278902112c6177811c5.js",
+    "service-worker.js": "/react-proj/service-worker.js",
+    "static/css/main.88c35fa2.chunk.css.map": "/react-proj/static/css/main.88c35fa2.chunk.css.map"
   }
 }
