@@ -7,34 +7,28 @@ import StatisticPage from './pages/StatisticPage/StatisticPage'
 import ContactDetailsPage from './pages/ContactDetailsPage/ContactDetailsPage'
 import ContactEdit from './pages/ContactEdit/ContactEdit'
 import Header from './components/Header/Header'
+import signupPage from './pages/SignupPage/SignupPage'
 
 
 
 
-class App extends Component {
-  render() {
-  
+function App() {
+ 
     return (
 <Router>
-  
   <Header></Header>
           <Switch>
             <Route exact path="/" component={HomePage} />
             <Route path="/statistic" component={StatisticPage} />
             <Route exact path="/contact" component={ContactPage} />
             <Route exact path="/contact/edit/:id?" component={ContactEdit} />
-            <Route exact path="/contact/:id?" component={ContactDetailsPage} />
-            {/* <Route path="/contact/edit/:id?" render={(props) => (
-              <ContactEdit contactId={props.match.params.id} history={props.match.history} /> )} /> */}
-            {/* <Route path="/contact/:id" render={({match}) => (
-              <ContactDetailsPage contactId={match.params.id} />)} /> */}
+            <Route exact path="/contact/:id" component={ContactDetailsPage} />
+            <Route path="/signup" component={signupPage} />
             <Route render={() => <h1>Page Not Found</h1>} />
           </Switch>
-        
-          
 </Router>
         )
   }
-}
+
 
 export default App;

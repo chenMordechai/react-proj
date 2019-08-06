@@ -1,24 +1,50 @@
 export default {
     getUser,
+    signup,
+    addMove,
+    saveToSrorage,
+    loadFromStorage
 }
 
 
-
-// function getUser() {
-//     return {
-//         name: "Ochoa Hyde",
-//         coins: 100,
-//         moves: []
-//     }
-// }
-
-
 function getUser() {
+       const user =  loadFromStorage('user')
+       if(user) {
+          return user
+       }
+       else{
+           return null
+       }
+}
+
+function signup(name) {
+    let newUser = {
+        name: name,
+        coins: 100,
+        moves: []
+    }
+    saveToSrorage('user' , newUser)
+    return newUser
+
+}
+
+function addMove(contact, amount) {
     return new Promise((resolve, reject) => {
         resolve({
-            name: "Ochoa Hyde",
-            coins: 100,
-            moves: []
+            toId: contact._id,
+            to: contact.name,
+            at: Date.now(),
+            amount: amount
         })
     })
+}
+
+
+function saveToSrorage(key, value){
+    var strValue = JSON.stringify(value)
+    localStorage.setItem(key, strValue)
+}
+
+function loadFromStorage(key){
+    return JSON.parse(localStorage.getItem(key))
 }

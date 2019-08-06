@@ -2,16 +2,21 @@ import React, { Component } from 'react';
 import ContactService from '../../services/ContactService'
 import { HashRouter as Router, Route, Link, NavLink, Switch } from 'react-router-dom'
 
+import { connect } from 'react-redux';
+import { getContact } from '../../store/actions/contactActions';
+
 class ContactDetailsPage extends Component {
-    state = { contact: {} }
+    // state = { contact: {} }
 
     async componentDidMount() {
-        const contact = await ContactService.getContactById(this.props.match.params.id);
-        this.setState({ contact })
+        const { dispatch } = this.props
+        dispatch(getContact(this.props.match.params.id)) 
+        // const contact = await ContactService.getContactById(this.props.match.params.id);
+        // this.setState({ contact })
       }
 
     render() {
-        const { contact } = this.state;
+        const { contact } = this.props;
 
         return (
             <div className="contact-details">
@@ -34,5 +39,11 @@ class ContactDetailsPage extends Component {
 
     }
 }
-
-export default ContactDetailsPage;
+const mapStateToProps = ({contactReducer}) => {
+    const { contact } = contactReducer;
+  
+    return {
+      contact
+    }
+  }
+  export default connect(mapStateToProps) (ContactDetailsPage);

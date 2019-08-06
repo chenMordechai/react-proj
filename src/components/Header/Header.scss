@@ -1,0 +1,16 @@
+.header {
+    text-align: center;
+    border-bottom: 1px solid;
+    nav {
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        a {
+            margin: 5px;
+        }
+    }
+    &:hover {
+        cursor: pointer;
+    }
+}

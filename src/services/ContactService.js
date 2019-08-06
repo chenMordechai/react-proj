@@ -7,7 +7,6 @@ export default {
 }
 
 
-
 const contacts = [
   {
     "_id": "5a56640269f443a5d64b32ca",

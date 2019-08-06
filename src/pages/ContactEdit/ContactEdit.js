@@ -2,15 +2,18 @@ import React, { Component } from 'react';
 import ContactService from '../../services/ContactService'
 import { HashRouter as Router, Route, Link, NavLink, Switch } from 'react-router-dom'
 
+import { connect } from 'react-redux';
+import { getContact , deleteContact ,saveContact } from '../../store/actions/contactActions';
 
 class ContactEdit extends Component {
     state = { contact: {name:"" , email:"" , phone:""} }
 
     async componentDidMount() {
         if (!this.props.match.params.id) return;
-        const contact = await ContactService.getContactById(this.props.match.params.id);
-        this.setState({ contact })
-        
+        const { dispatch } = this.props
+        dispatch(getContact(this.props.match.params.id)) 
+        // const contact = await ContactService.getContactById(this.props.match.params.id);
+        this.setState({contact:this.props.contact})
       }
 
       whenInput =(event)=>{
@@ -20,12 +23,16 @@ class ContactEdit extends Component {
       }
       save = (event)=>{
         event.preventDefault();
-        ContactService.saveContact(this.state.contact)
+        const { dispatch } = this.props
+        dispatch(saveContact(this.state.contact)) 
+        // ContactService.saveContact(this.state.contact)
         const {history} = this.props;
         history.push(`/contact`);
       }
       deleteContact = () =>{
-        ContactService.deleteContact(this.state.contact._id)
+        const { dispatch } = this.props
+        dispatch(deleteContact(this.props.match.params.id)) 
+        // ContactService.deleteContact(this.state.contact._id)
         const {history} = this.props;
         history.push(`/contact`);
       }
@@ -43,7 +50,7 @@ class ContactEdit extends Component {
                     <h1>Email:</h1>
                     <input type="text" value={contact.email} name="email" onChange={this.whenInput}/>
                     <button>Save</button>
-                    <Link to={`/contact/${contact._id}`}>Back</Link>
+                    <Link to={`/contact/`}>Back</Link>
                     </form>
 
                     <button onClick={this.deleteContact}>Delete</button>
@@ -52,5 +59,12 @@ class ContactEdit extends Component {
       }
 }
 
-export default ContactEdit;
+const mapStateToProps = ({contactReducer}) => {
+  const { contact } = contactReducer;
+
+  return {
+    contact
+  }
+}
+export default connect(mapStateToProps) (ContactEdit);
 

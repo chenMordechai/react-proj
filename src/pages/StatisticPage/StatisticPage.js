@@ -1,22 +1,34 @@
 import React, { Component } from 'react';
-import BitcoinService from '../../services/BitcoinService'
 import Chart from '../../components/chart/chart'
+
+import { connect } from 'react-redux';
+import { getConfirmedTransactions, getMarketPrices } from '../../store/actions/bitcoinAction';
 
 class StatisticPage extends Component {
 
-state = {marketPrice:[] , confirmTransactions:[]}
+// state = {marketPrice:[] , confirmTransactions:[]}
 
-    async componentDidMount() {
-        const marketPrice = await BitcoinService.getMarketPrice()
-        this.setState({marketPrice})
-        const confirmTransactions = await BitcoinService.getConfirmedTransactions(1);
-        this.setState({ confirmTransactions })
+    componentDidMount  () {
+        this.getMarketPrices();
+        this.getConfirmedTransactions();
+    }
+    getConfirmedTransactions(){
+        const { dispatch } = this.props
+        dispatch(getConfirmedTransactions()) 
+        // const confirmTransactions = await BitcoinService.getConfirmedTransactions(1);
+        // this.setState({ confirmTransactions })
 
+    }
+    getMarketPrices(){
+        const { dispatch } = this.props
+        dispatch(getMarketPrices()) 
+        // const marketPrice = await BitcoinService.getMarketPrice()
+        // this.setState({marketPrice})
     }
     
     render() {
 
-        const { marketPrice , confirmTransactions} = this.state
+        const { marketPrice , confirmTransactions} = this.props
         return (
             <div className="statistic-page">
             <h1>Market Price (USD)</h1>
@@ -31,4 +43,13 @@ state = {marketPrice:[] , confirmTransactions:[]}
     }
 }
 
-export default StatisticPage;
+const mapStateToProps = ({bitcoinReducer}) => {
+    const { marketPrice , confirmTransactions} = bitcoinReducer;
+  
+    return {
+        marketPrice,
+        confirmTransactions
+    }
+  }
+  export default connect(mapStateToProps) (StatisticPage);
+
