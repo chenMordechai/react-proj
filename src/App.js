@@ -7,6 +7,7 @@ import StatisticPage from './pages/StatisticPage/StatisticPage'
 import ContactDetailsPage from './pages/ContactDetailsPage/ContactDetailsPage'
 import ContactEdit from './pages/ContactEdit/ContactEdit'
 import Header from './components/Header/Header'
+import Footer from './components/Footer/Footer'
 import signupPage from './pages/SignupPage/SignupPage'
 
 
@@ -26,6 +27,7 @@ function App() {
             <Route path="/signup" component={signupPage} />
             <Route render={() => <h1>Page Not Found</h1>} />
           </Switch>
+<Footer></Footer>
 </Router>
         )
   }

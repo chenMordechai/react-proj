@@ -1,3 +1,18 @@
 .home-page{
-    text-align: center;
+    background-image: url('https://inteng-storage.s3.amazonaws.com/img/iea/ypwqaankwN/sizes/bitcoin_resize_md.jpg');
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: contain;
+    .content{
+        color: blanchedalmond;
+        position: absolute;
+        top: 234px;
+        width: 247px;
+        left: 62px;
+        h2{
+            margin-top: 0px;
+        }
+
+    }
 }
+

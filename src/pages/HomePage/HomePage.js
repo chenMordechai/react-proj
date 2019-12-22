@@ -31,9 +31,11 @@ class HomePage extends Component {
         return (
         user &&
             <div className="home-page">
+                <div className="content">
             <h2>Hello {user.name}!</h2>
             <h2>Coins: {user.coins}</h2>
             <h2>BTC: {rate}</h2>
+                </div>
            
             </div>
         )

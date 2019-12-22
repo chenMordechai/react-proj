@@ -8,7 +8,7 @@ class ContactPreview extends Component {
        
         return (
               <section className="contact-preview" onClick={this.props.contactSelected.bind(this, this.props.contact)}>
-               <img src={`https://robohash.org/${this.props.contact.name}.png`} alt=""></img>
+               <img src={`https://robohash.org/${this.props.contact.name}?set=set5`} alt=""></img>
                {this.props.contact.name} 
               </section>
             )

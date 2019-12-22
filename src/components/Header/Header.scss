@@ -2,12 +2,20 @@
     text-align: center;
     border-bottom: 1px solid;
     nav {
-        height: 50px;
+        h2{
+            color: #e8ad5d;
+        }
+        height: 70px;
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
+        background-color:black;
+        padding: 10px;
         a {
             margin: 5px;
+            text-decoration: none;
+            color: #e8ad5d;
+
         }
     }
     &:hover {

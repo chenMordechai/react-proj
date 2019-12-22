@@ -5,10 +5,12 @@ import './Header.scss'
 
 const Links = () => (
     <nav>
-      <NavLink exact to="/">Home </NavLink> |
+      <h2><NavLink exact to="/">misterBitcoin</NavLink></h2>
+      <div>
       <NavLink to="/statistic"> Statistic </NavLink> |
       <NavLink to="/contact"> Contact</NavLink> |
       <NavLink to="/signup"> Signup</NavLink> 
+      </div>
 
     </nav>
   )
